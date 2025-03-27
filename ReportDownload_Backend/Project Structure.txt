@@ -1,0 +1,42 @@
+springboot-api/
+│── src/
+│   ├── main/
+│   │   ├── java/com/example/springbootapi/
+│   │   │   ├── SpringbootApiApplication.java      # Main application entry point
+│   │   │   │
+│   │   │   ├── config/                            #  Security & JWT Configuration
+│   │   │   │   ├── SecurityConfig.java            # Spring Security configuration
+│   │   │   │   ├── JwtUtil.java                   # JWT Utility class for token generation
+│   │   │   │   ├── JwtFilter.java                 # Filter for handling JWT requests
+│   │   │   │   ├── CustomUserDetailsService.java  # Load user details for authentication
+│   │   │   │
+│   │   │   ├── controller/                        #  REST API Controllers
+│   │   │   │   ├── AuthController.java            # Handles user authentication (Login/Register)
+│   │   │   │   ├── ReportController.java          # Handles PDF generation & report retrieval
+│   │   │   │
+│   │   │   ├── entity/                            #  Database Entities
+│   │   │   │   ├── User.java                      # User entity for authentication
+│   │   │   │   ├── Report.java                    # Report entity for storing report data
+│   │   │   │
+│   │   │   ├── repository/                        #  Database Repositories (JPA)
+│   │   │   │   ├── UserRepository.java            # Interface to manage user database operations
+│   │   │   │   ├── ReportRepository.java          # Interface to manage reports database
+│   │   │   │
+│   │   │   ├── service/                           #  Business Logic & PDF Generation
+│   │   │   │   ├── AuthService.java               # User authentication logic
+│   │   │   │   ├── ReportService.java             # Handles PDF generation and fetching reports
+│   │   │   │
+│   │   │   ├── dto/                               #  Data Transfer Objects
+│   │   │   │   ├── LoginRequest.java              # DTO for login request
+│   │   │   │   ├── RegisterRequest.java           # DTO for user registration
+│   │   │   │
+│   │   ├── resources/                             #  Configuration & Static Resources
+│   │   │   ├── application.properties             # Local database configuration
+│   │   │   ├── application-prod.properties        # Remote database config (for future)
+│   │   │   ├── static/                            # Static files (if needed)
+│   │   │   ├── templates/                         # HTML templates (if using Thymeleaf)
+│   │   │
+│   ├── test/java/com/example/springbootapi/       #  Unit & Integration Tests
+│
+│── pom.xml                                        #  Project Dependencies (Maven)
+│── README.md                                      #  Project Documentation

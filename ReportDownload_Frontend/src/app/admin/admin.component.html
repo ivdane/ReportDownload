@@ -1,0 +1,20 @@
+<div class="container mt-5">
+    <h2 class="text-center">Admin Dashboard</h2>
+  
+    <div class="card p-4 mt-3">
+      <form (ngSubmit)="addReport()">
+        <label class="form-label">Add New Report</label>
+        <input type="text" class="form-control" [(ngModel)]="newReport" name="newReport" required />
+        <button type="submit" class="btn btn-success mt-3">Add Report</button>
+      </form>
+  
+      <h3 class="mt-4">Manage Reports</h3>
+      <ul class="list-group">
+        <li *ngFor="let report of reportList | async" class="list-group-item d-flex justify-content-between align-items-center">
+          {{ report }}
+          <button class="btn btn-danger btn-sm" (click)="removeReport(report)">Delete</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  

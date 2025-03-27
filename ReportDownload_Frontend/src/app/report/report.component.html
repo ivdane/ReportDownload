@@ -1,0 +1,80 @@
+<div class="container mt-4">
+  <!-- Logout Button (Top-Right Corner) -->
+  <div class="d-flex justify-content-end">
+    <button class="btn btn-danger" (click)="logout()">Logout</button>
+  </div>
+
+  <h2>Report Selection</h2>
+
+  <form [formGroup]="reportForm">
+    <!-- Frequency Selection -->
+    <div class="mb-3">
+      <label class="form-label">Select Frequency</label>
+      <select class="form-control" formControlName="frequency" (change)="onFrequencyChange()">
+        <option value="">Select Frequency</option>
+        <option value="Daily">Daily</option>
+        <option value="Periodic">Periodic</option>
+        <option value="Monthly">Monthly</option>
+      </select>
+    </div>
+
+    <!-- Daily Selection (Appears when "Daily" is selected) -->
+<div class="mb-3" *ngIf="selectedFrequency === 'Daily'">
+  <label class="form-label">Select Date</label>
+  <input type="date" class="form-control" formControlName="dailyDate" [max]="currentDate" />
+</div>
+
+
+    <!-- Year Selection (For Monthly & Periodic) -->
+    <div class="mb-3" *ngIf="selectedFrequency === 'Monthly' || selectedFrequency === 'Periodic'">
+      <label class="form-label">Select Year</label>
+      <select class="form-control" formControlName="year">
+        <option value="">Select Year</option>
+        <option *ngFor="let year of yearList" [value]="year">{{ year }}</option>
+      </select>
+    </div>
+
+    <!-- Month Selection (For Monthly & Periodic) -->
+    <div class="mb-3" *ngIf="selectedFrequency === 'Monthly' || selectedFrequency === 'Periodic'">
+      <label class="form-label">Select Month</label>
+      <select class="form-control" formControlName="month" (change)="onMonthSelect()">
+        <option value="">Select Month</option>
+        <option *ngFor="let month of monthList" [value]="month">{{ month }}</option>
+      </select>
+    </div>
+
+    <!-- Periodic Date Range Selection (Only for Periodic) -->
+    <div class="mb-3" *ngIf="selectedFrequency === 'Periodic'">
+      <label class="form-label">Select Date Range</label>
+      <select class="form-control" formControlName="dateRange">
+        <option value="">Select Date Range</option>
+        <option *ngFor="let range of dateRanges" [value]="range">{{ range }}</option>
+      </select>
+    </div>
+
+    <!-- Location Selection -->
+    <div class="mb-3">
+      <label class="form-label">Select Location</label>
+      <select class="form-control" formControlName="selectedLocation">
+        <option value="">Select Location</option>
+        <option *ngFor="let location of locationList" [value]="location">{{ location }}</option>
+      </select>
+    </div>
+
+    <!-- Report Selection -->
+    <div class="mb-3">
+      <label class="form-label">Select Reports</label>
+      <select class="form-control" multiple (change)="onReportSelect($event)">
+        <option *ngFor="let report of reportList" [value]="report">{{ report }}</option>
+      </select>
+    </div>
+
+    <!-- Summary -->
+    <div class="alert alert-info" *ngIf="summaryText">
+      {{ summaryText }}
+    </div>
+
+    <!-- Generate Report Button -->
+    <button class="btn btn-primary" type="button" (click)="generateReport()">Generate Report</button>
+  </form>
+</div>

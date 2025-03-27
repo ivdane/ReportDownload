@@ -1,0 +1,63 @@
+/* Center the form container */
+.container {
+  max-width: 500px; /* Restrict width */
+  margin: 50px auto; /* Center horizontally with some margin */
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure form controls have a consistent size */
+select.form-control,
+input.form-control {
+  width: 100%; /* Ensure dropdowns fit inside the container */
+  max-width: 300px; /* Prevent stretching */
+  margin: 0 auto; /* Center the element */
+  display: block; /* Fix alignment issues */
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+select.form-control:focus,
+input.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  outline: none;
+}
+
+/* Multi-select dropdowns */
+select[multiple] {
+  height: auto;
+  min-height: 100px;
+}
+
+/* Summary text */
+.alert {
+  max-width: 300px; /* Prevent it from stretching */
+  margin: 10px auto; /* Center it */
+  text-align: center;
+}
+
+/* Center buttons */
+button {
+  max-width: 300px; /* Restrict button width */
+  display: block;
+  margin: 10px auto; /* Center button */
+  padding: 10px;
+  font-size: 18px;
+  color: white;
+  background: #007bff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover {
+  background: #0056b3;
+}

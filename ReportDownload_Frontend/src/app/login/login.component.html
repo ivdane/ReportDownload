@@ -1,0 +1,47 @@
+<div class="login-container">
+  <div class="login-card">
+    <div class="logo-container">
+      <img src="/assets/logo.jpg" alt="Indian Railways Logo" class="railway-logo">
+    </div>
+
+    <h2 class="text-center text-primary">Welcome to Indian Railways</h2>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          🔑 <!-- Lock Icon by icons-->
+        </span>
+        <input
+          type="text"
+          class="form-control form-control-lg"
+          formControlName="username"
+          placeholder="Enter your username"
+          required
+        />
+      </div>
+
+      <div class="input-group mb-3">
+        <span class="input-group-text">
+          🔒 <!-- Lock Icon -->
+        </span>
+        <input
+          type="password"
+          class="form-control form-control-lg"
+          formControlName="password"
+          placeholder="Enter your password"
+          required
+        />
+      </div>
+
+      <button type="submit" class="btn btn-primary w-100 py-2 mt-3 fs-5 fw-bold" [disabled]="loginForm.invalid">
+        🔓 Login
+      </button>
+<!-- Forgot password link -->
+      <div class="text-center mt-3">
+        <a [routerLink]="'/forgot-password'" class="text-decoration-none text-muted">
+          Forgot Password?
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
