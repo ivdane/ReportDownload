@@ -1,4 +1,4 @@
-springboot-api/
+springboot-api/main structure
 │── src/
 │   ├── main/
 │   │   ├── java/com/example/springbootapi/
