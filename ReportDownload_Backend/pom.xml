@@ -8,11 +8,11 @@
 		<version>3.3.10</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.Basic_Proj</groupId>
+	<groupId>com.Cris_backend</groupId>
 	<artifactId>ReportDownload_Backend</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ReportDownload_Backend</name>
-	<description>Backend for report downloading</description>
+	<description>Backend for report download project</description>
 	<url/>
 	<licenses>
 		<license/>
